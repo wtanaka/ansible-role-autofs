@@ -17,3 +17,10 @@
     creates: /etc/auto.master
   sudo: yes
   when: backcompat_pkg_mgr == "dnf"
+
+- name: Configure /net
+  sudo: yes
+  lineinfile: "state={{autofs_net_state}}
+    dest=/etc/auto.master
+    line='/net\t-hosts'
+    regexp='/net.*-hosts'"

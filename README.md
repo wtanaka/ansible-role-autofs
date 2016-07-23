@@ -11,7 +11,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: wtanaka.autofs, net: true }
+         - { role: wtanaka.autofs, autofs_net_state: present }
 
 License
 -------
