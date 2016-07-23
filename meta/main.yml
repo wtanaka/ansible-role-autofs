@@ -12,13 +12,8 @@ galaxy_info:
     - 21
     - 22
     - 23
-    - 24
   - name: Ubuntu
     versions:
-    - lucid
-    - maverick
-    - natty
-    - oneiric
     - precise
     - quantal
     - raring
@@ -30,14 +25,7 @@ galaxy_info:
     - xenial
   - name: Debian
     versions:
-    - all
-    - etch
     - jessie
-    - lenny
-    - sid
-    - squeeze
-    - stretch
-    - wheezy
   categories:
   - networking
   - system
