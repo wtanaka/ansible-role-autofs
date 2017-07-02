@@ -5,8 +5,6 @@ rvm:
   - 2.0
   - 1.9.3
 
-sudo: required
-
 services:
   - docker
 
