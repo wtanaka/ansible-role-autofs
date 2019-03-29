@@ -1,19 +1,13 @@
 ---
-- include: compat.yml
+- name: check for short-circuit
+  raw: "> /dev/null command -v retext;"
+  register: installed
+  ignore_errors: True
+  changed_when: False
+
+- name: set should_run fact
+  set_fact:
+    should_run: "{{installed|failed or not retext_should_shortcircuit}}"
 
 - include: include_vars.yml
-
-- include: Debian.yml
-  when: ansible_os_family == 'Debian'
-
-- include: RedHat.yml
-  when: ansible_os_family == 'RedHat'
-
-- include: install_package_names.yml
-
-- name: Configure /net
-  sudo: yes
-  lineinfile: "state={{autofs_net_state}}
-    dest=/etc/auto.master
-    line='/net\t-hosts'
-    regexp='/net.*-hosts'"
+- include: sudoorbecome.yml
