@@ -13,6 +13,19 @@ Example Playbook
       roles:
          - { role: wtanaka.autofs, autofs_net_state: present }
 
+### `autofs_should_shortcircuit`
+
+Default: True
+
+When True, this role short-circuits itself if a "autofs" is already in the
+path
+
+### All variables
+
+The full set of configuration options available are visible in
+[defaults/main.yml](defaults/main.yml)
+
+
 License
 -------
 
@@ -21,4 +34,4 @@ GPLv2
 Author Information
 ------------------
 
-http://wtanaka.com/
+https://wtanaka.com/
